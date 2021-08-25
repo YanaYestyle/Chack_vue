@@ -1,12 +1,12 @@
 <template>
   <div class="app">
     <h1 style="text-align: center">In case there's nothing to do at all... Absolutely nothing... Chuck will help...<br> I hope...</h1>
-    <div :key="joke.id" v-for="joke in jokes">
-      <div class="jokes" v-if="!isJokesLoading">
-        <div>{{joke.value}}</div>
+      <div v-if="!isJokesLoading">
+        <div class="jokes" :key="joke.id" v-for="joke in jokes">
+          <div>{{joke.value}}</div>
+        </div>
       </div>
       <div v-else class="loader"></div>
-    </div> 
     <div ref="observer"></div>
   </div>
 </template>
@@ -81,8 +81,6 @@ export default {
   padding: 15px;
   border: 3px solid chocolate;
   margin-top: 15px;
-  display: flex;
-  align-items: center;
 }
 
 .loader {
@@ -90,7 +88,8 @@ export default {
   height: 100px;
   border-radius: 50%;
   border: 3px dashed salmon;
-  animation: rotate 1s infinite linear; /*анимация по классу rotate*/
+  animation: rotate 1s infinite linear;
+  margin: auto auto;
 }
 
 @keyframes rotate {
