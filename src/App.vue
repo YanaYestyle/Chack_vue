@@ -7,7 +7,8 @@
         </div>
       </div>
       <div v-else class="loader"></div>
-    <div ref="observer"></div>
+    <!--<div ref="observer"></div>    one more way--> 
+    <div v-intersection="fetchJokeMore"></div>
   </div>
 </template>
 
@@ -48,7 +49,7 @@ export default {
       this.fetchJokeMore();
     };
     
-    let options = {
+    /*let options = {
     rootMargin: '5px',
     threshold: 0.5
     };
@@ -60,7 +61,7 @@ export default {
     };
 
     let observer = new IntersectionObserver(callback, options);
-    observer.observe(this.$refs.observer)
+    observer.observe(this.$refs.observer)  - for observer */ 
   }
 }
 </script>
