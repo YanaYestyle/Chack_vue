@@ -1,10 +1,10 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import Vintersection from './directives/Vintersection';
+import VIntersection from './directives/VIntersection';
 
 
 const app = createApp(App);
 
-app.directive('intersection', Vintersection);
+app.directive('intersection', VIntersection);
 
 app.mount('#app');
